@@ -107,6 +107,11 @@ The display state will be managed using React's state and props. Below are key f
 
 Feel free to fork the repository and submit pull requests. Make sure to update the README with any new features or changes.
 
+### Contact
+
+For any questions or feedback, please open an issue on the [GitHub repository](https://github.com/sumukhbendre123/IconPicker) or contact [sumukhbendre@gmail.com](mailto:sumukhbendre@gmail.com).
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
