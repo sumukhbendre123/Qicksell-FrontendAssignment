@@ -1,58 +1,58 @@
 import React, { useEffect, useState } from "react";
 import { TiThList } from "react-icons/ti";
 import "./TopNav.css";
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectData } from "../../Actions/DataAction";
 
 const getGroup = () => {
-  // console.log(localStorage.getItem("group"));
 
-  if(localStorage.getItem("group")){
+
+  if (localStorage.getItem("group")) {
     return localStorage.getItem("group");
-  }else{
+  } else {
     return "status";
   }
 }
 
 const getOrder = () => {
-  if(localStorage.getItem("order")){
+  if (localStorage.getItem("order")) {
     return localStorage.getItem("order");
-  }else{
+  } else {
     return "priority";
   }
 }
 const TopNav = () => {
   const [displayOnClick, setDisplayOnClick] = useState(false);
   const dispatch = useDispatch();
-  const {allTickets, allUser} = useSelector(state => state.DataReducer);
+  const { allTickets, allUser } = useSelector(state => state.DataReducer);
   const [groupValue, setGroupValue] = useState(getGroup());
   const [orderValue, setOrderValue] = useState(getOrder());
 
   const handleGroupValue = (e, valueBool) => {
-    if(valueBool){
+    if (valueBool) {
       setGroupValue(e.target.value);
       setDisplayOnClick(!displayOnClick);
       localStorage.setItem("group", e.target.value);
-    }else{
+    } else {
       setOrderValue(e.target.value);
-    setDisplayOnClick(!displayOnClick);
-    localStorage.setItem("order", e.target.value);
+      setDisplayOnClick(!displayOnClick);
+      localStorage.setItem("order", e.target.value);
     }
   }
 
   useEffect(() => {
-    if(groupValue === 'user'){
+    if (groupValue === 'user') {
       dispatch(selectData(groupValue, {
         allTickets, allUser
       }, orderValue))
-    }else{
+    } else {
       dispatch(selectData(groupValue, allTickets, orderValue));
     }
   }, [allTickets, dispatch, groupValue, allUser, orderValue]);
- 
-  
+
+
   return (
-    <div className="top-header" style={{paddingLeft : "10px"}}>
+    <div className="top-header" style={{ paddingLeft: "10px" }}>
       <div className="displayButton">
         <button
           className="p-10 f-16 btn"

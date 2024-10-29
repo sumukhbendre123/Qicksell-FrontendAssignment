@@ -14,6 +14,12 @@
         |-- DataAction.js
     |-- App.css
     |-- App.js
+    |-- assets
+        |-- backend_development.jpg
+        |-- client_review.jpg
+        |-- code_refactoring.jpg
+        |-- project_planning.jpg
+        |-- userImage.jpg
     |-- components
         |-- Card
             |-- Card.css
@@ -21,7 +27,11 @@
         |-- DashBoard
             |-- DashView.css
             |-- DashView.jsx
+        |-- Data
+            |-- cardData.js
+        |-- dataDisplay.js
         |-- Loading
+            |-- Loading.css
             |-- Loading.jsx
         |-- TopNav
             |-- TopNav.css
@@ -29,4 +39,6 @@
     |-- index.js
     |-- Reducers
         |-- DataReducer.js
+    |-- store
+        |-- store.js
     |-- store.js
