@@ -32,13 +32,13 @@ const DataDisplay = () => {
                                 <h2>{elem[index]?.title}</h2>
                                 <div>
                                     {elem[index]?.value?.map((ticket) => {
-                                        // Find the corresponding user image based on userId
+
                                         const userImage = allUser.find(user => user.id === ticket.userId)?.available
-                                            ? 'public/profile.jpg' // Set your image path or logic here
+                                            ? 'public/profile.jpg'
                                             : '';
 
-                                        // Determine showImage based on the selected grouping
-                                        const showImage = user ? false : true; // showImage false for user grouping, true otherwise
+
+                                        const showImage = user ? false : true;
 
                                         return (
                                             <Card
@@ -46,8 +46,8 @@ const DataDisplay = () => {
                                                 id={ticket.id}
                                                 title={ticket.title}
                                                 tag={ticket.tag}
-                                                showImage={showImage} // Pass showImage prop
-                                                userImage={userImage} // Pass user image
+                                                showImage={showImage}
+                                                userImage={userImage}
                                             />
                                         );
                                     })}
